@@ -1,0 +1,14 @@
+<form class="new_project" id="new_project" action="/posts" method="POST">
+    <input type="hidden" name="authenticity_token" value="FUJRTyr0zQDPqaGeHJwcHKOHJNjeppYWobSYmXPuVIFXpTtZxylXw/IvkWOPtM46DRQz5KbSlCqPGVlJ6da/Sg==">
+    <div class="form-group">
+        <label class="text-muted required" for="project_name">Name</label>
+        <input class="form-control" type="text" name="name" id="project_name">
+    </div>
+    <div class="form-group">
+        <label class="text-muted" for="project_description">Description</label>
+        <textarea rows="7" class="form-control" name="description" id="project_description"></textarea>
+    </div>
+    <div class="centered mt-5">
+        <input type="submit" name="commit" value="Create Project" class="btn btn-secondary" data-disable-with="Create Project">
+    </div>
+</form>
