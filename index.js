@@ -9,7 +9,7 @@ import {registerValidation, loginValidation, postCreateValidation} from "./valid
 const app = express();
 
 
-mongoose.connect("mongodb+srv://admin:7B6iEI3hkvftms6s@cluster0.ho8sp9g.mongodb.net/basecamp?retryWrites=true")
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("Connected to DB ..."))
 .catch((error) => console.error("Error" + error));
 
@@ -26,6 +26,6 @@ app.post("/posts", checkAuth, postCreateValidation, validationErrors, PostContro
 app.delete("/posts/:id", checkAuth, PostController.remove);
 app.patch("/posts/:id",checkAuth, postCreateValidation, validationErrors, PostController.update);
 
-app.listen(4444, (err) =>{
+app.listen(process.env.PORT || 4444, (err) =>{
     if (err) return console.log(err);
 })
